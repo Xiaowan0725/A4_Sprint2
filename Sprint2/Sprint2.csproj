@@ -86,6 +86,7 @@
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <None Include=".editorconfig" />
     <None Include="Properties\Settings.settings">
@@ -100,10 +101,12 @@
     <None Include="Resources\Rechteckprofil.bmp" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Resources\img_0900.jpg" />
+    <Folder Include="Image\" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Image\" />
+    <Resource Include="Resources\img_IProfil.JPG" />
+    <Resource Include="Resources\img_Rechteck.jpg" />
+    <Resource Include="Resources\img_TProfil.JPG" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
