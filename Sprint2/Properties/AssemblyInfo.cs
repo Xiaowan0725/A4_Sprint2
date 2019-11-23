@@ -4,9 +4,9 @@ using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using System.Windows;
 
-// 有关程序集的一般信息由以下
-// 控制。更改这些特性值可修改
-// 与程序集关联的信息。
+// Allgemeine Informationen über eine Assembly werden über die folgenden
+// Attribute gesteuert. Ändern Sie diese Attributwerte, um die Informationen zu ändern,
+// die einer Assembly zugeordnet sind.
 [assembly: AssemblyTitle("Sprint2")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
@@ -16,40 +16,40 @@ using System.Windows;
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
-// 将 ComVisible 设置为 false 会使此程序集中的类型
-//对 COM 组件不可见。如果需要从 COM 访问此程序集中的类型
-//请将此类型的 ComVisible 特性设置为 true。
+// Durch Festlegen von ComVisible auf FALSE werden die Typen in dieser Assembly
+// für COM-Komponenten unsichtbar.  Wenn Sie auf einen Typ in dieser Assembly von
+// COM aus zugreifen müssen, sollten Sie das ComVisible-Attribut für diesen Typ auf "True" festlegen.
 [assembly: ComVisible(false)]
 
-//若要开始生成可本地化的应用程序，请设置
-//.csproj 文件中的 <UICulture>CultureYouAreCodingWith</UICulture>
-//例如，如果您在源文件中使用的是美国英语，
-//使用的是美国英语，请将 <UICulture> 设置为 en-US。  然后取消
-//对以下 NeutralResourceLanguage 特性的注释。  更新
-//以下行中的“en-US”以匹配项目文件中的 UICulture 设置。
+//Um mit dem Erstellen lokalisierbarer Anwendungen zu beginnen, legen Sie
+//<UICulture>ImCodeVerwendeteKultur</UICulture> in der .csproj-Datei
+//in einer <PropertyGroup> fest.  Wenn Sie in den Quelldateien beispielsweise Deutsch
+//(Deutschland) verwenden, legen Sie <UICulture> auf \"de-DE\" fest.  Heben Sie dann die Auskommentierung
+//des nachstehenden NeutralResourceLanguage-Attributs auf.  Aktualisieren Sie "en-US" in der nachstehenden Zeile,
+//sodass es mit der UICulture-Einstellung in der Projektdatei übereinstimmt.
 
 //[assembly: NeutralResourcesLanguage("en-US", UltimateResourceFallbackLocation.Satellite)]
 
 
 [assembly: ThemeInfo(
-    ResourceDictionaryLocation.None, //主题特定资源词典所处位置
-                                     //(未在页面中找到资源时使用，
-                                     //或应用程序资源字典中找到时使用)
-    ResourceDictionaryLocation.SourceAssembly //常规资源词典所处位置
-                                              //(未在页面中找到资源时使用，
-                                              //、应用程序或任何主题专用资源字典中找到时使用)
+    ResourceDictionaryLocation.None, //Speicherort der designspezifischen Ressourcenwörterbücher
+                                     //(wird verwendet, wenn eine Ressource auf der Seite nicht gefunden wird,
+                                     // oder in den Anwendungsressourcen-Wörterbüchern nicht gefunden werden kann.)
+    ResourceDictionaryLocation.SourceAssembly //Speicherort des generischen Ressourcenwörterbuchs
+                                              //(wird verwendet, wenn eine Ressource auf der Seite nicht gefunden wird,
+                                              // designspezifischen Ressourcenwörterbuch nicht gefunden werden kann.)
 )]
 
 
-// 程序集的版本信息由下列四个值组成: 
+// Versionsinformationen für eine Assembly bestehen aus den folgenden vier Werten:
 //
-//      主版本
-//      次版本
-//      生成号
-//      修订号
+//      Hauptversion
+//      Nebenversion
+//      Buildnummer
+//      Revision
 //
-//可以指定所有这些值，也可以使用“生成号”和“修订号”的默认值
-//通过使用 "*"，如下所示:
+// Sie können alle Werte angeben oder Standardwerte für die Build- und Revisionsnummern verwenden,
+// indem Sie "*" wie unten gezeigt eingeben:
 // [assembly: AssemblyVersion("1.0.*")]
 [assembly: AssemblyVersion("1.0.0.0")]
 [assembly: AssemblyFileVersion("1.0.0.0")]

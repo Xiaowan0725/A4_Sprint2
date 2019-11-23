@@ -9,7 +9,7 @@ using System.Windows;
 namespace Sprint2
 {
     /// <summary>
-    /// App.xaml 的交互逻辑
+    /// Interaktionslogik für "App.xaml"
     /// </summary>
     public partial class App : Application
     {
