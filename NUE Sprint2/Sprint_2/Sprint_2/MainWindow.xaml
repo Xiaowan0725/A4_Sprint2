@@ -1,0 +1,107 @@
+﻿<Window x:Class="Sprint_2.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Sprint_2"
+        mc:Ignorable="d"
+        Title="Balkenberechnung" Height="536.837" Width="780.902">
+    <Grid>
+        <TreeView x:Name="tv_Profilarten" HorizontalAlignment="Left" Height="276" Margin="10,10,0,0" VerticalAlignment="Top" Width="176">
+            <TreeViewItem x:Name="tvi_Eckige" Header="Eckige Formen" Height="100" Width="130" IsExpanded="True">
+                <TreeViewItem x:Name="tvi_I_Profil" Header="I-Profil" HorizontalAlignment="Left" Height="20" Width="86" Margin="0,0,-0.4,0" Selected="tvi_I_Profil_Selected"/>
+                <TreeViewItem x:Name="tvi_Rechteck_Profil" Header="Rechteck Profil" HorizontalAlignment="Left" Height="20" Width="111" Margin="-25,0,0,0" Selected="tvi_Rechteck_Profil_Selected"/>
+                <TreeViewItem x:Name="tvi_T_Profil" Header="T-Profil" HorizontalAlignment="Left" Height="20" Width="86" Margin="0,0,-0.4,0" Selected="tvi_T_Profil_Selected"/>
+            </TreeViewItem>
+            <TreeViewItem x:Name="tvi_Runde" Header="Runde Formen" Height="79" Width="130" IsExpanded="True">
+                <TreeViewItem x:Name="tvi_Kreisprofil" Header="Kreis Profil" HorizontalAlignment="Left" Height="19" Width="147" Margin="0,0,-36.6,0" Selected="tvi_Kreisprofil_Selected"/>
+                <TreeViewItem x:Name="tvi_Kreisringprofil" Header="Kreisring Profil" HorizontalAlignment="Left" Height="19" Width="106" Margin="-25,0,0,0" Selected="tvi_Kreisringprofil_Selected"/>
+            </TreeViewItem>
+        </TreeView>
+        <Grid x:Name="RechtteckProfil" HorizontalAlignment="Left" Height="286" Margin="202,0,0,0" VerticalAlignment="Top" Width="578" d:IsHidden="True">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Label x:Name="label_b" Content="b:[mm]" HorizontalAlignment="Left" Height="36" Margin="0,42,0,0" VerticalAlignment="Top" Width="88"/>
+            <TextBox x:Name="tb_b" HorizontalAlignment="Left" Height="36" Margin="103,42,0,0" TextWrapping="Wrap" Text=" " VerticalAlignment="Top" Width="112"/>
+            <Label x:Name="lb_h" Content="h:[mm]" HorizontalAlignment="Left" Height="36" Margin="0,83,0,0" VerticalAlignment="Top" Width="88"/>
+            <Label x:Name="lb_l" Content="l:[mm]" HorizontalAlignment="Left" Height="36" Margin="0,124,0,0" VerticalAlignment="Top" Width="88"/>
+            <Label x:Name="lb_Dichte" Content="Dichte:&#xD;&#xA;[g/mm∧3]" HorizontalAlignment="Left" Height="53" Margin="0,169,0,0" VerticalAlignment="Top" Width="98"/>
+            <TextBox x:Name="tb_h" HorizontalAlignment="Left" Height="36" Margin="103,83,0,0" TextWrapping="Wrap" Text=" " VerticalAlignment="Top" Width="112"/>
+            <TextBox x:Name="tb_l" HorizontalAlignment="Left" Height="36" Margin="103,124,0,0" TextWrapping="Wrap" Text=" " VerticalAlignment="Top" Width="112"/>
+            <TextBox x:Name="tb_Dichte" HorizontalAlignment="Left" Height="36" Margin="103,169,0,0" TextWrapping="Wrap" Text=" " VerticalAlignment="Top" Width="112"/>
+            <Image x:Name="Image_Rechteckprofil" HorizontalAlignment="Left" Height="159" Margin="269,46,0,0" VerticalAlignment="Top" Width="176" Source="Rechteckprofil.jpg"/>
+            <Label x:Name="titelRechteckprofil" Content="Rechteckprofil" HorizontalAlignment="Left" Height="36" Margin="270,10,0,0" VerticalAlignment="Top" Width="200" FontWeight="Bold" FontSize="16"/>
+        </Grid>
+        <Button x:Name="btn_Rechne" Content="Rechne" HorizontalAlignment="Left" Height="34" Margin="667,463,0,0" VerticalAlignment="Top" Width="95" Click="btn_Rechne_Click"/>
+        <Button x:Name="btn_Ende" Content="Ende" HorizontalAlignment="Left" Height="34" Margin="523,463,0,0" VerticalAlignment="Top" Width="101" Click="btn_Ende_Click"/>
+        <Grid x:Name="Ausgabe" HorizontalAlignment="Left" Height="135" Margin="191,323,0,0" VerticalAlignment="Top" Width="571">
+            <Label x:Name="lb_Querschnittfläche" Content="Querschnittfläche:[mm∧2]" HorizontalAlignment="Left" Height="34" Margin="10,10,0,0" VerticalAlignment="Top" Width="161"/>
+            <TextBox x:Name="tb_Querschnittfläche" HorizontalAlignment="Left" Height="34" Margin="171,10,0,0" TextWrapping="Wrap" Text=" " VerticalAlignment="Top" Width="90" />
+            <Label x:Name="lb_Volumen" Content="Volumen:[mm∧3]" HorizontalAlignment="Left" Height="34" Margin="10,44,0,0" VerticalAlignment="Top" Width="132"/>
+            <Label x:Name="lb_Gewicht" Content="Gewicht:[g]" HorizontalAlignment="Left" Height="34" Margin="10,83,0,0" VerticalAlignment="Top" Width="109"/>
+            <Label x:Name="lb_FTM_Z" Content="Flächenträgheits-&#xD;&#xA;moment-Z:[mm∧4]" HorizontalAlignment="Left" Height="50" Margin="266,67,0,0" VerticalAlignment="Top" Width="170"/>
+            <TextBox x:Name="tb_Volumen" HorizontalAlignment="Left" Height="34" Margin="171,48,0,0" TextWrapping="Wrap" Text=" " VerticalAlignment="Top" Width="90"/>
+            <TextBox x:Name="tb_Gewicht" HorizontalAlignment="Left" Height="34" Margin="171,83,0,0" TextWrapping="Wrap" Text=" " VerticalAlignment="Top" Width="90"/>
+            <TextBox x:Name="tb_FTM_Z" HorizontalAlignment="Left" Height="34" Margin="436,71,0,0" TextWrapping="Wrap" Text=" " VerticalAlignment="Top" Width="120" />
+            <TextBox x:Name="tb_FTM_Y" HorizontalAlignment="Left" Height="34" Margin="436,14,0,0" TextWrapping="Wrap" Text=" " VerticalAlignment="Top" Width="120"/>
+            <Label x:Name="lb_FTM_Y" Content="Flächenträgheits-&#xD;&#xA;moment-Y:[mm∧4]" HorizontalAlignment="Left" Height="52" Margin="266,10,0,0" VerticalAlignment="Top" Width="170"/>
+        </Grid>
+        <Grid x:Name="I_Profil" HorizontalAlignment="Left" Height="303" Margin="202,0,-5.6,0" VerticalAlignment="Top" Width="578" Visibility="Visible" d:IsHidden="True">
+            <Label x:Name="label_H_I_Profil" Content="H:[mm]" HorizontalAlignment="Left" Height="36" Margin="0,42,0,0" VerticalAlignment="Top" Width="88"/>
+            <TextBox x:Name="tb_H_I_Profil" HorizontalAlignment="Left" Height="36" Margin="103,42,0,0" TextWrapping="Wrap" Text=" " VerticalAlignment="Top" Width="112"/>
+            <Label x:Name="lb_h_I_Profil" Content="h:[mm]" HorizontalAlignment="Left" Height="36" Margin="0,83,0,0" VerticalAlignment="Top" Width="88"/>
+            <Label x:Name="lb_B_I_Profil" Content="B:[mm]" HorizontalAlignment="Left" Height="36" Margin="0,124,0,0" VerticalAlignment="Top" Width="88"/>
+            <Label x:Name="lb_Dichte_I_Profil" Content="Dichte:[]" HorizontalAlignment="Left" Height="36" Margin="0,251,0,0" VerticalAlignment="Top" Width="88"/>
+            <TextBox x:Name="tb_hI_Profil" HorizontalAlignment="Left" Height="36" Margin="103,83,0,0" TextWrapping="Wrap" Text=" " VerticalAlignment="Top" Width="112"/>
+            <TextBox x:Name="tb_l1" HorizontalAlignment="Left" Height="36" Margin="103,124,0,0" TextWrapping="Wrap" Text=" " VerticalAlignment="Top" Width="112"/>
+            <TextBox x:Name="tb_Dichte_I_Profil" HorizontalAlignment="Left" Height="36" Margin="103,251,0,0" TextWrapping="Wrap" Text=" " VerticalAlignment="Top" Width="112" />
+            <Image x:Name="Image_I_Profil" HorizontalAlignment="Left" Height="159" Margin="269,46,0,0" VerticalAlignment="Top" Width="176" Source="fullsizerender.jpg"/>
+            <Label x:Name="titelI_Profil" Content="I-Profil" HorizontalAlignment="Left" Height="36" Margin="270,10,0,0" VerticalAlignment="Top" Width="200" FontWeight="Bold" FontSize="16"/>
+            <Label x:Name="lb_b1_I_Profil_Copy" Content="b1:[mm]" HorizontalAlignment="Left" Height="36" Margin="0,169,0,0" VerticalAlignment="Top" Width="88"/>
+            <Label x:Name="lb_b2_I_Profil_Copy1" Content="b2:[mm]" HorizontalAlignment="Left" Height="36" Margin="0,210,0,0" VerticalAlignment="Top" Width="88"/>
+            <TextBox x:Name="tb_b1_I_Profil_Copy" HorizontalAlignment="Left" Height="36" Margin="103,169,0,0" TextWrapping="Wrap" Text=" " VerticalAlignment="Top" Width="112"/>
+            <TextBox x:Name="tb_b2_I_Profil_Copy1" HorizontalAlignment="Left" Height="36" Margin="103,210,0,0" TextWrapping="Wrap" Text=" " VerticalAlignment="Top" Width="112"/>
+        </Grid>
+        <Grid x:Name="T_Profil" HorizontalAlignment="Left" Height="286" Margin="202,0,0,0" VerticalAlignment="Top" Width="578" d:IsHidden="True">
+            <Label x:Name="label_H_T_Profil" Content="H:[mm]" HorizontalAlignment="Left" Height="36" Margin="0,42,0,0" VerticalAlignment="Top" Width="88"/>
+            <Label x:Name="label_h_T_Profil" Content="h:[mm]" HorizontalAlignment="Left" Height="36" Margin="0,83,0,0" VerticalAlignment="Top" Width="88"/>
+            <Label x:Name="label_B_T_Profil" Content="B:[mm]" HorizontalAlignment="Left" Height="36" Margin="0,124,0,0" VerticalAlignment="Top" Width="88"/>
+            <Label x:Name="label_b1_T_Profil" Content="b1:[mm]" HorizontalAlignment="Left" Height="36" Margin="0,169,0,0" VerticalAlignment="Top" Width="88"/>
+            <Label x:Name="label_b2_T_Profil" Content="b2:[mm]" HorizontalAlignment="Left" Height="36" Margin="0,210,0,0" VerticalAlignment="Top" Width="88"/>
+            <Label x:Name="titelT_Profil" Content="T-Profil" HorizontalAlignment="Left" Height="36" Margin="270,10,0,0" VerticalAlignment="Top" Width="200" FontWeight="Bold" FontSize="16"/>
+            <Image x:Name="Image_T_Profil" HorizontalAlignment="Left" Height="159" Margin="257,46,0,0" VerticalAlignment="Top" Width="287" Source="T_Profil.jpg"/>
+            <TextBox x:Name="tb_Dichte_T_Profil" HorizontalAlignment="Left" Height="36" Margin="103,251,0,-1" TextWrapping="Wrap" Text=" " VerticalAlignment="Top" Width="112"/>
+
+            <TextBox x:Name="tb_H_T_Profil1" HorizontalAlignment="Left" Height="36" Margin="103,42,0,0" TextWrapping="Wrap" Text=" " VerticalAlignment="Top" Width="112"/>
+            <TextBox x:Name="tb_h_T_Profil" HorizontalAlignment="Left" Height="36" Margin="103,83,0,0" TextWrapping="Wrap" Text=" " VerticalAlignment="Top" Width="112"/>
+            <TextBox x:Name="tb_B_T_Profil" HorizontalAlignment="Left" Height="36" Margin="103,124,0,0" TextWrapping="Wrap" Text=" " VerticalAlignment="Top" Width="112"/>
+            <TextBox x:Name="tb_b1_T_Profil" HorizontalAlignment="Left" Height="36" Margin="103,169,0,0" TextWrapping="Wrap" Text=" " VerticalAlignment="Top" Width="112"/>
+            <Label x:Name="label_dichte_T_Profil" Content="Dichte:[]" HorizontalAlignment="Left" Height="36" Margin="0,251,0,0" VerticalAlignment="Top" Width="88"/>
+            <TextBox x:Name="tb_b2_T_Profil" HorizontalAlignment="Left" Height="36" Margin="103,210,0,0" TextWrapping="Wrap" Text=" " VerticalAlignment="Top" Width="112"/>
+        </Grid>
+        <Grid x:Name="Kreis_Profil" HorizontalAlignment="Left" Height="286" Margin="202,0,0,0" VerticalAlignment="Top" Width="578" Visibility="Visible">
+            <Label x:Name="label_d_Kreis_Profil" Content="d:[mm]" Height="36" Margin="0,42,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="88"/>
+            <TextBox x:Name="tb_d_Kreis_Profil" HorizontalAlignment="Left" Height="36" Margin="103,42,0,0" TextWrapping="Wrap" Text=" " VerticalAlignment="Top" Width="112"/>
+            <Label x:Name="lb_l_Kreis_Profil" Content="l:[mm]" HorizontalAlignment="Left" Height="36" Margin="0,83,0,0" VerticalAlignment="Top" Width="88"/>
+            <Label x:Name="lb_dichte_Kreis_Profil" Content="Dichte:[]" HorizontalAlignment="Left" Height="36" Margin="0,124,0,0" VerticalAlignment="Top" Width="88"/>
+            <TextBox x:Name="tb_l_Kreis_Profil" HorizontalAlignment="Left" Height="36" Margin="103,83,0,0" TextWrapping="Wrap" Text=" " VerticalAlignment="Top" Width="112"/>
+            <TextBox x:Name="tb_dichte_Kreis_Profil" HorizontalAlignment="Left" Height="36" Margin="103,124,0,0" TextWrapping="Wrap" Text=" " VerticalAlignment="Top" Width="112"/>
+            <Image x:Name="Image_Kreis_Profil" HorizontalAlignment="Left" Height="159" Margin="269,46,0,0" VerticalAlignment="Top" Width="176" Source="Kreis_Profil.jpg"/>
+            <Label x:Name="titelKreis_Profil" Content="Kreis Profil" HorizontalAlignment="Left" Height="36" Margin="270,10,0,0" VerticalAlignment="Top" Width="200" FontWeight="Bold" FontSize="16"/>
+        </Grid>
+        <Grid x:Name="Kreisring_Profil" HorizontalAlignment="Left" Height="286" Margin="202,0,0,0" VerticalAlignment="Top" Width="578" Visibility="Visible" d:IsHidden="True">
+            <Label x:Name="label_d_Kreisring_Profil" Content="d:[mm]" Height="36" Margin="0,42,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="88"/>
+            <TextBox x:Name="tb_d_Kreisring_Profil" HorizontalAlignment="Right" Height="36" Margin="0,0,363,208" TextWrapping="Wrap" Text=" " VerticalAlignment="Bottom" Width="112"/>
+            <Label x:Name="lb_l_Kreisring_Profil" Content="l:[mm]" HorizontalAlignment="Left" Height="36" Margin="0,124,0,0" VerticalAlignment="Top" Width="88"/>
+            <Label x:Name="lb_dichte_Kreisring_Profil" Content="Dichte:[]" HorizontalAlignment="Left" Height="36" Margin="0,169,0,0" VerticalAlignment="Top" Width="88"/>
+            <TextBox x:Name="tb_l_Kreisring_Profil" HorizontalAlignment="Left" Height="36" Margin="103,124,0,0" TextWrapping="Wrap" Text=" " VerticalAlignment="Top" Width="112"/>
+            <TextBox x:Name="tb_dichte_Kreisring_Profil" HorizontalAlignment="Left" Height="36" Margin="103,169,0,0" TextWrapping="Wrap" Text=" " VerticalAlignment="Top" Width="112"/>
+            <Image x:Name="Image_Kreisring_Profil" HorizontalAlignment="Left" Height="159" Margin="269,46,0,0" VerticalAlignment="Top" Width="176" Source="Kreisring_Profil.jpg"/>
+            <Label x:Name="titelKreisring_Profil" Content="Kreisring Profil" HorizontalAlignment="Left" Height="36" Margin="270,10,0,0" VerticalAlignment="Top" Width="200" FontWeight="Bold" FontSize="16"/>
+            <TextBox x:Name="tb_dm_Kreisring_Profil" HorizontalAlignment="Left" Height="36" Margin="103,83,0,0" TextWrapping="Wrap" Text=" " VerticalAlignment="Top" Width="112"/>
+            <Label x:Name="label_dm_Kreisring_Profil" Content="dm:[mm]" Height="36" Margin="-3,83,480,0" VerticalAlignment="Top"/>
+        </Grid>
+
+    </Grid>
+</Window>
