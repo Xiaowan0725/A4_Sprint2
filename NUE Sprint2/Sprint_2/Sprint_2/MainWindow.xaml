@@ -26,7 +26,7 @@
             <TextBox x:Name="tb_b" HorizontalAlignment="Left" Height="36" Margin="103,42,0,0" TextWrapping="Wrap" Text=" " VerticalAlignment="Top" Width="112" TextAlignment="Center"/>
             <Label x:Name="lb_h" Content="h:[mm]" HorizontalAlignment="Left" Height="36" Margin="0,83,0,0" VerticalAlignment="Top" Width="88"/>
             <Label x:Name="lb_l" Content="l:[mm]" HorizontalAlignment="Left" Height="36" Margin="0,124,0,0" VerticalAlignment="Top" Width="88"/>
-            <Label x:Name="lb_Dichte" Content="Dichte:&#xD;&#xA;[g/mm∧3]" HorizontalAlignment="Left" Height="53" Margin="0,169,0,0" VerticalAlignment="Top" Width="98"/>
+            <Label x:Name="lb_Dichte" Content="Dichte:&#xD;&#xA;[g/mm∧3]" HorizontalAlignment="Left" Height="42" Margin="0,169,0,0" VerticalAlignment="Top" Width="98"/>
             <TextBox x:Name="tb_h" HorizontalAlignment="Left" Height="36" Margin="103,83,0,0" TextWrapping="Wrap" Text=" " VerticalAlignment="Top" Width="112" TextAlignment="Center"/>
             <TextBox x:Name="tb_l" HorizontalAlignment="Left" Height="36" Margin="103,124,0,0" TextWrapping="Wrap" Text=" " VerticalAlignment="Top" Width="112" TextAlignment="Center"/>
             <TextBox x:Name="tb_Dichte" HorizontalAlignment="Left" Height="36" Margin="103,169,0,0" TextWrapping="Wrap" Text=" " VerticalAlignment="Top" Width="112" TextAlignment="Center"/>
@@ -52,7 +52,7 @@
             <TextBox x:Name="tb_H_I_Profil" HorizontalAlignment="Left" Height="36" Margin="103,42,0,0" TextWrapping="Wrap" Text=" " VerticalAlignment="Top" Width="112" TextAlignment="Center"/>
             <Label x:Name="lb_h_I_Profil" Content="h:[mm]" HorizontalAlignment="Left" Height="36" Margin="0,83,0,0" VerticalAlignment="Top" Width="88"/>
             <Label x:Name="lb_B_I_Profil" Content="B:[mm]" HorizontalAlignment="Left" Height="36" Margin="0,124,0,0" VerticalAlignment="Top" Width="88"/>
-            <Label x:Name="lb_Dichte_I_Profil" Content="Dichte:[]" HorizontalAlignment="Left" Height="36" Margin="0,251,0,0" VerticalAlignment="Top" Width="88"/>
+            <Label x:Name="lb_Dichte_I_Profil" Content="Dichte:&#xD;&#xA;[g/mm∧3]" HorizontalAlignment="Left" Height="42" Margin="0,251,0,0" VerticalAlignment="Top" Width="88"/>
             <TextBox x:Name="tb_hI_Profil" HorizontalAlignment="Left" Height="36" Margin="103,83,0,0" TextWrapping="Wrap" Text=" " VerticalAlignment="Top" Width="112" TextAlignment="Center"/>
             <TextBox x:Name="tb_l1" HorizontalAlignment="Left" Height="36" Margin="103,124,0,0" TextWrapping="Wrap" Text=" " VerticalAlignment="Top" Width="112" TextAlignment="Center"/>
             <TextBox x:Name="tb_Dichte_I_Profil" HorizontalAlignment="Left" Height="36" Margin="103,251,0,0" TextWrapping="Wrap" Text=" " VerticalAlignment="Top" Width="112" TextAlignment="Center" />
@@ -77,14 +77,14 @@
             <TextBox x:Name="tb_h_T_Profil" HorizontalAlignment="Left" Height="36" Margin="103,83,0,0" TextWrapping="Wrap" Text=" " VerticalAlignment="Top" Width="112" TextAlignment="Center"/>
             <TextBox x:Name="tb_B_T_Profil" HorizontalAlignment="Left" Height="36" Margin="103,124,0,0" TextWrapping="Wrap" Text=" " VerticalAlignment="Top" Width="112" TextAlignment="Center"/>
             <TextBox x:Name="tb_b1_T_Profil" HorizontalAlignment="Left" Height="36" Margin="103,169,0,0" TextWrapping="Wrap" Text=" " VerticalAlignment="Top" Width="112" TextAlignment="Center"/>
-            <Label x:Name="label_dichte_T_Profil" Content="Dichte:[]" HorizontalAlignment="Left" Height="36" Margin="0,251,0,0" VerticalAlignment="Top" Width="88"/>
+            <Label x:Name="label_dichte_T_Profil" Content="Dichte:&#xD;&#xA;[g/mm∧3]" HorizontalAlignment="Left" Height="45" Margin="0,251,0,0" VerticalAlignment="Top" Width="88"/>
             <TextBox x:Name="tb_b2_T_Profil" HorizontalAlignment="Left" Height="36" Margin="103,210,0,0" TextWrapping="Wrap" Text=" " VerticalAlignment="Top" Width="112" TextAlignment="Center"/>
         </Grid>
-        <Grid x:Name="Kreis_Profil" HorizontalAlignment="Left" Height="286" Margin="202,0,0,0" VerticalAlignment="Top" Width="578" Visibility="Visible">
+        <Grid x:Name="Kreis_Profil" HorizontalAlignment="Left" Height="320" Margin="202,0,0,0" VerticalAlignment="Top" Width="578" Visibility="Visible">
             <Label x:Name="label_d_Kreis_Profil" Content="d:[mm]" Height="36" Margin="0,42,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="88"/>
             <TextBox x:Name="tb_d_Kreis_Profil" HorizontalAlignment="Left" Height="36" Margin="103,42,0,0" TextWrapping="Wrap" Text=" " VerticalAlignment="Top" Width="112" TextAlignment="Center"/>
             <Label x:Name="lb_l_Kreis_Profil" Content="l:[mm]" HorizontalAlignment="Left" Height="36" Margin="0,83,0,0" VerticalAlignment="Top" Width="88"/>
-            <Label x:Name="lb_dichte_Kreis_Profil" Content="Dichte:[]" HorizontalAlignment="Left" Height="36" Margin="0,124,0,0" VerticalAlignment="Top" Width="88"/>
+            <Label x:Name="lb_dichte_Kreis_Profil" Content="Dichte:&#xD;&#xA;[g/mm∧3]" HorizontalAlignment="Left" Height="42" Margin="0,124,0,0" VerticalAlignment="Top" Width="88"/>
             <TextBox x:Name="tb_l_Kreis_Profil" HorizontalAlignment="Left" Height="36" Margin="103,83,0,0" TextWrapping="Wrap" Text=" " VerticalAlignment="Top" Width="112" TextAlignment="Center"/>
             <TextBox x:Name="tb_dichte_Kreis_Profil" HorizontalAlignment="Left" Height="36" Margin="103,124,0,0" TextWrapping="Wrap" Text=" " VerticalAlignment="Top" Width="112" TextAlignment="Center"/>
             <Image x:Name="Image_Kreis_Profil" HorizontalAlignment="Left" Height="159" Margin="269,46,0,0" VerticalAlignment="Top" Width="176" Source="Kreis_Profil.jpg"/>
@@ -94,7 +94,7 @@
             <Label x:Name="label_d_Kreisring_Profil" Content="d:[mm]" Height="36" Margin="0,42,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="88"/>
             <TextBox x:Name="tb_d_Kreisring_Profil" HorizontalAlignment="Right" Height="36" Margin="0,0,363,208" TextWrapping="Wrap" Text=" " VerticalAlignment="Bottom" Width="112" TextAlignment="Center"/>
             <Label x:Name="lb_l_Kreisring_Profil" Content="l:[mm]" HorizontalAlignment="Left" Height="36" Margin="0,124,0,0" VerticalAlignment="Top" Width="88"/>
-            <Label x:Name="lb_dichte_Kreisring_Profil" Content="Dichte:[]" HorizontalAlignment="Left" Height="36" Margin="0,169,0,0" VerticalAlignment="Top" Width="88"/>
+            <Label x:Name="lb_dichte_Kreisring_Profil" Content="Dichte:&#xD;&#xA;[g/mm∧3]" HorizontalAlignment="Left" Height="42" Margin="0,169,0,0" VerticalAlignment="Top" Width="88"/>
             <TextBox x:Name="tb_l_Kreisring_Profil" HorizontalAlignment="Left" Height="36" Margin="103,124,0,0" TextWrapping="Wrap" Text=" " VerticalAlignment="Top" Width="112" TextAlignment="Center"/>
             <TextBox x:Name="tb_dichte_Kreisring_Profil" HorizontalAlignment="Left" Height="36" Margin="103,169,0,0" TextWrapping="Wrap" Text=" " VerticalAlignment="Top" Width="112" TextAlignment="Center"/>
             <Image x:Name="Image_Kreisring_Profil" HorizontalAlignment="Left" Height="159" Margin="269,46,0,0" VerticalAlignment="Top" Width="176" Source="Kreisring_Profil.jpg"/>
