@@ -120,9 +120,9 @@ namespace Sprint_2
 
         private void btn_Ende_Click(object sender, RoutedEventArgs e)
         {
+           
             Application.Current.Shutdown();
         }
 
-       
     }
 }
