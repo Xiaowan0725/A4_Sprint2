@@ -37,14 +37,14 @@
         <Button x:Name="btn_Ende" Content="Ende" HorizontalAlignment="Left" Height="34" Margin="523,463,0,0" VerticalAlignment="Top" Width="101" Click="btn_Ende_Click"/>
         <Grid x:Name="Ausgabe" HorizontalAlignment="Left" Height="135" Margin="191,323,0,0" VerticalAlignment="Top" Width="571">
             <Label x:Name="lb_Querschnittfläche" Content="Querschnittfläche:[mm∧2]" HorizontalAlignment="Left" Height="34" Margin="10,10,0,0" VerticalAlignment="Top" Width="161"/>
-            <TextBox x:Name="tb_Querschnittfläche" HorizontalAlignment="Left" Height="34" Margin="171,10,0,0" TextWrapping="Wrap" Text=" " VerticalAlignment="Top" Width="90" TextAlignment="Center" />
+            <TextBox x:Name="tb_Querschnittfläche" HorizontalAlignment="Left" Height="34" Margin="171,10,0,0" TextWrapping="Wrap" Text=" " VerticalAlignment="Top" Width="90" TextAlignment="Center" IsEnabled="False" />
             <Label x:Name="lb_Volumen" Content="Volumen:[mm∧3]" HorizontalAlignment="Left" Height="34" Margin="10,44,0,0" VerticalAlignment="Top" Width="132"/>
             <Label x:Name="lb_Gewicht" Content="Gewicht:[g]" HorizontalAlignment="Left" Height="34" Margin="10,83,0,0" VerticalAlignment="Top" Width="109"/>
             <Label x:Name="lb_FTM_Z" Content="Flächenträgheits-&#xD;&#xA;moment-Z:[mm∧4]" HorizontalAlignment="Left" Height="50" Margin="266,67,0,0" VerticalAlignment="Top" Width="170"/>
-            <TextBox x:Name="tb_Volumen" HorizontalAlignment="Left" Height="34" Margin="171,48,0,0" TextWrapping="Wrap" Text=" " VerticalAlignment="Top" Width="90" TextAlignment="Center"/>
-            <TextBox x:Name="tb_Gewicht" HorizontalAlignment="Left" Height="34" Margin="171,83,0,0" TextWrapping="Wrap" Text=" " VerticalAlignment="Top" Width="90" TextAlignment="Center"/>
-            <TextBox x:Name="tb_FTM_Z" HorizontalAlignment="Left" Height="34" Margin="436,71,0,0" TextWrapping="Wrap" Text=" " VerticalAlignment="Top" Width="120" TextAlignment="Center" />
-            <TextBox x:Name="tb_FTM_Y" HorizontalAlignment="Left" Height="34" Margin="436,14,0,0" TextWrapping="Wrap" Text=" " VerticalAlignment="Top" Width="120" TextAlignment="Center"/>
+            <TextBox x:Name="tb_Volumen" HorizontalAlignment="Left" Height="34" Margin="171,48,0,0" TextWrapping="Wrap" Text=" " VerticalAlignment="Top" Width="90" TextAlignment="Center" IsEnabled="False"/>
+            <TextBox x:Name="tb_Gewicht" HorizontalAlignment="Left" Height="34" Margin="171,83,0,0" TextWrapping="Wrap" Text=" " VerticalAlignment="Top" Width="90" TextAlignment="Center" IsEnabled="False"/>
+            <TextBox x:Name="tb_FTM_Z" HorizontalAlignment="Left" Height="34" Margin="436,71,0,0" TextWrapping="Wrap" Text=" " VerticalAlignment="Top" Width="120" TextAlignment="Center" IsEnabled="False" />
+            <TextBox x:Name="tb_FTM_Y" HorizontalAlignment="Left" Height="34" Margin="436,14,0,0" TextWrapping="Wrap" Text=" " VerticalAlignment="Top" Width="120" TextAlignment="Center" IsEnabled="False"/>
             <Label x:Name="lb_FTM_Y" Content="Flächenträgheits-&#xD;&#xA;moment-Y:[mm∧4]" HorizontalAlignment="Left" Height="52" Margin="266,10,0,0" VerticalAlignment="Top" Width="170"/>
         </Grid>
         <Grid x:Name="I_Profil" HorizontalAlignment="Left" Height="303" Margin="202,0,-5.6,0" VerticalAlignment="Top" Width="578" Visibility="Visible" d:IsHidden="True">
