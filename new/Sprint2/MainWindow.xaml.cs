@@ -14,7 +14,8 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 using System.Windows.Forms; //für den Exit-Fenster
-
+using MessageBox = System.Windows.MessageBox;
+using TextBox = System.Windows.Controls.TextBox;
 
 namespace Sprint2
 {
@@ -77,6 +78,7 @@ namespace Sprint2
         //Berechne Volumen ist für alle Profile gleich
         private void rechne_VolumentUndMasse()
         {
+
             double vol;
             vol = Convert.ToDouble(tb_Flaeche.Text) * Convert.ToDouble(tb_Laenge.Text);
             tb_Volumen.Text = Convert.ToString(Math.Round(vol,6));
@@ -91,6 +93,8 @@ namespace Sprint2
         {
             double b = Convert.ToDouble(tb_1.Text);
             double h = Convert.ToDouble(tb_2.Text);
+            
+            
 
             //FLÄCHE
             tb_Flaeche.Text = Convert.ToString(Math.Round(
@@ -116,6 +120,18 @@ namespace Sprint2
             double h = Convert.ToDouble(tb_2.Text);
             double B = Convert.ToDouble(tb_3.Text);
             double b = Convert.ToDouble(tb_4.Text);
+            
+
+            if (B < b)
+            {
+                MessageBoxResult msgAbfrage = MessageBox.Show("B muss größer als b sein!");
+                return;
+            }
+            else if (H < h)
+            {
+                MessageBoxResult msgAbfrage = MessageBox.Show("H muss größer als b sein!");
+                return;
+            }
 
             //FLÄCHE
             tb_Flaeche.Text = Convert.ToString(Math.Round(
@@ -140,6 +156,17 @@ namespace Sprint2
             double h = Convert.ToDouble(tb_2.Text);
             double B = Convert.ToDouble(tb_3.Text);
             double b = Convert.ToDouble(tb_4.Text);
+            
+            if (B < b)
+            {
+                MessageBoxResult msgAbfrage = MessageBox.Show("B muss größer als b sein!");
+                return;
+            }
+            else if (H < h)
+            {
+                MessageBoxResult msgAbfrage = MessageBox.Show("H muss größer als b sein!");
+                return;
+            }
 
             //FLÄCHE
             tb_Flaeche.Text = Convert.ToString(Math.Round(
@@ -160,7 +187,10 @@ namespace Sprint2
         {
             double h = Convert.ToDouble(tb_1.Text);
             double b = Convert.ToDouble(tb_2.Text);
+
             
+
+
             //FLÄCHE
             tb_Flaeche.Text = Convert.ToString(Math.Round(
                 (h*b)/2,
@@ -180,7 +210,7 @@ namespace Sprint2
         private void rechne_Kreis()
         {
             double d = Convert.ToDouble(tb_1.Text);
-            
+
             //FLÄCHE
             tb_Flaeche.Text = Convert.ToString(Math.Round(
                 Math.PI*Math.Pow(d,2)/4,
@@ -202,6 +232,13 @@ namespace Sprint2
         {
             double D = Convert.ToDouble(tb_1.Text);
             double d = Convert.ToDouble(tb_2.Text);
+            
+            if (D < d)
+            {
+                MessageBoxResult msgAbfrage = MessageBox.Show("D muss größer als d sein!");
+                return;
+            }
+          
 
             //FLÄCHE
             tb_Flaeche.Text = Convert.ToString(Math.Round(
@@ -232,24 +269,28 @@ namespace Sprint2
 
         private void testIfNumeric(object sender, TextChangedEventArgs e)
         {
-            //string[] tb_all = { tb_1.Text, tb_2.Text, tb_3.Text, tb_4.Text, tb_Dichte.Text, tb_Laenge.Text };
+            TextBox tb = (TextBox)e.Source;
+            string neu = "";
+            bool punktVorhanden = false;
 
-            //for (int i = 0; i < 6; i++) // es gibt 6 elemente in tb_all, welche getestet werden
-            //{
-            //    if (IsNumeric(tb_all[i]) || tb_all[i].Contains("-") || tb_all[i].Contains("."))
-            //    {
-            //        tb_Volumen.Text = "ist num";
-            //    }
-            //    else
-            //    {
-            //       tb_Volumen.Text = "nicht num";
-            //    }
-            //}
+            for (int i = 0; i < tb.Text.Length; i++)
+            {
+                char c = tb.Text[i];
+                if (char.IsDigit(c) || (c == '-' && i == 0))
+                {
+                    neu += c;
+                }
+                else if (c == '.' && !punktVorhanden)
+                {
+                    neu += c;
+                    punktVorhanden = true;
+                }
+            }
 
+            tb.Text = neu;
         }
-
-        //Zeige dem Profil entsprechendes Bild
-        private void zeigeBild(string location)
+            //Zeige dem Profil entsprechendes Bild
+            private void zeigeBild(string location)
         {
             img_Image.Source = new BitmapImage(new Uri(location, UriKind.Relative));
             img_Image.Visibility = Visibility.Visible;
