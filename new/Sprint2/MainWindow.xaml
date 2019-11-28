@@ -1,0 +1,87 @@
+﻿<Window x:Class="Sprint2.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Sprint2"
+        mc:Ignorable="d"
+        Title="Balkenberechnung" Height="450" Width="800"  ResizeMode="CanMinimize" Icon="Resources/strahlt.ico">
+    <Grid Margin="-2,0,2,0">
+
+        <Button x:Name="btn_Rechne" Content="Rechne"  HorizontalAlignment="Left" Height="27" Margin="657,364,0,0" VerticalAlignment="Top" Width="110" Click="btn_Rechne_Click"  IsEnabled="False"/>
+        <Button x:Name="btn_Ende" Content="Ende" HorizontalAlignment="Left" Height="27" Margin="10,365,0,0" VerticalAlignment="Top" Width="130" Click="btn_Ende_Click"/>
+        <Image Name="img_Image" HorizontalAlignment="Left" Height="175" Margin="456,78,0,0" VerticalAlignment="Top" Width="203" />
+
+        <Label Name="label1"  HorizontalAlignment="Left" Height="27" Margin="159,39,0,0" VerticalAlignment="Top" Width="90"/>
+        <TextBox Name="tb_1" Visibility="Hidden" HorizontalAlignment="Left" Height="27" Margin="264,39,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="149" TextChanged="testIfNumeric" />
+
+        <Label Name="label2"  HorizontalAlignment="Left" Height="31" Margin="159,76,0,0" VerticalAlignment="Top" Width="90"/>
+        <TextBox Name="tb_2"   Visibility="Hidden" HorizontalAlignment="Left" Height="31" Margin="264,76,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="149" TextChanged="testIfNumeric"/>
+
+        <Label Name="label3"  HorizontalAlignment="Left" Height="31" Margin="159,118,0,0" VerticalAlignment="Top" Width="90"/>
+        <TextBox Name="tb_3" Visibility="Hidden" HorizontalAlignment="Left" Height="31" Margin="264,118,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="149" TextChanged="testIfNumeric"/>
+
+        <Label Name="label4"  HorizontalAlignment="Left" Height="31" Margin="159,158,0,0" VerticalAlignment="Top" Width="90"/>
+        <TextBox Name="tb_4" Visibility="Hidden" HorizontalAlignment="Left" Height="31" Margin="264,158,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="149" TextChanged="testIfNumeric"/>
+
+
+        <Label x:Name="lb_Dichte"  HorizontalAlignment="Left" Height="28" Margin="159,238,0,0" VerticalAlignment="Top" Width="116"/>
+        <TextBox x:Name="tb_Dichte" Visibility="Hidden" HorizontalAlignment="Left" Height="28" Margin="264,238,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="149" TextChanged="testIfNumeric"/>
+
+        <Label x:Name="lb_Laenge" HorizontalAlignment="Left" Height="28" Margin="159,276,0,0" VerticalAlignment="Top" Width="116"/>
+        <TextBox x:Name="tb_Laenge" Visibility="Hidden" HorizontalAlignment="Left" Height="28" Margin="264,276,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="149" TextChanged="testIfNumeric"/>
+
+
+
+
+        <TreeView x:Name="tw_profilAuswahl" HorizontalAlignment="Left" Height="150" Margin="10,10,0,0" VerticalAlignment="Top" Width="130">
+            <TreeViewItem x:Name="Willkommen" Header="Willkommen" IsExpanded="True" Selected="it_Willkommen_Selected"/>
+            <TreeViewItem  x:Name="Eckigeprofile" Header="Eckigeprofile" IsExpanded="True" Selected="it_Profil_Selected">
+                <TreeViewItem x:Name="it_Rechteckprofil" Header="Rechteckprofil" Selected="it_Rechteckprofil_Selected" />
+                <TreeViewItem x:Name="it_IProfil" Header="I-Profil" Selected="it_IProfil_Selected"/>
+                <TreeViewItem x:Name="it_TProfil" Header="T-Profil" Selected="it_TProfil_Selected"/>
+                <TreeViewItem x:Name="it_Dreieck" Header="Dreieckprofil" Selected="it_Dreieck_Selected" />
+            </TreeViewItem>
+            <TreeViewItem  x:Name="Rundeprofile" Header="Rundeprofil" IsExpanded="True" Selected="it_Profil_Selected">
+                <TreeViewItem x:Name="it_KeisProfil" Header="Kreisprofil" Selected="it_Kreis_Selected"/>
+                <TreeViewItem x:Name="it_KreisringProfil" Header="Kreisringprofil" Selected="it_Kreisring_Selected"/>
+            </TreeViewItem>
+        </TreeView>
+
+
+
+
+        <Label x:Name="profilName" HorizontalAlignment="Left" Height="40" Margin="456,35,0,0" VerticalAlignment="Top" Width="141" FontSize="18" FontWeight="Bold"/>
+
+        <Grid HorizontalAlignment="Left" Height="100" Margin="169,309,0,0" VerticalAlignment="Top" Width="481">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="3*"/>
+                <RowDefinition Height="22*"/>
+            </Grid.RowDefinitions>
+
+            <Label Name="lb_Flaeche"  HorizontalAlignment="Left" Height="27" Margin="-11,3,0,0" VerticalAlignment="Top" Width="108" Grid.Row="1"/>
+            <TextBox Name="tb_Flaeche"  HorizontalAlignment="Left" Height="27" Margin="121,3,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="100"  Grid.Row="1" Visibility="Hidden" IsReadOnly = "True"/>
+
+            <Label Name="lb_Volumen"   HorizontalAlignment="Left" Height="27" Margin="-11,34,0,0" VerticalAlignment="Top" Width="108" Grid.Row="1"/>
+            <TextBox Name="tb_Volumen"  HorizontalAlignment="Left" Height="27" Margin="121,34,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="100" Grid.Row="1" Visibility="Hidden" IsReadOnly = "True"/>
+
+            <Label Name="lb_Masse"   HorizontalAlignment="Left" Height="27" Margin="-11,64,0,-3" VerticalAlignment="Top" Width="108" Grid.Row="1"/>
+            <TextBox Name="tb_Masse"  HorizontalAlignment="Left" Height="27" Margin="121,64,0,-3" TextWrapping="Wrap" VerticalAlignment="Top" Width="100" Grid.Row="1" Visibility="Hidden" IsReadOnly = "True"/>
+
+            <Label x:Name="lb_out1"  HorizontalAlignment="Left" Height="27" Margin="262,3,0,0" VerticalAlignment="Top" Width="76" Grid.Row="1"/>
+            <TextBox x:Name="tb_out1"  HorizontalAlignment="Left" Height="27" Margin="347,3,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="100"  Grid.Row="1" Visibility="Hidden" IsReadOnly = "True"/>
+
+            <Label x:Name="lb_out2"   HorizontalAlignment="Left" Height="27" Margin="262,34,0,0" VerticalAlignment="Top" Width="76" Grid.Row="1"/>
+            <TextBox x:Name="tb_out2"  HorizontalAlignment="Left" Height="27" Margin="347,34,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="100" Grid.Row="1" Visibility="Hidden" IsReadOnly = "True"/>
+        </Grid>
+
+        <Grid x:Name="lb_Willkommen" Visibility="Visible" HorizontalAlignment="Left" Height="179" Margin="190,10,0,0" VerticalAlignment="Top" Width="261">
+            <Label Content="Willkommen" HorizontalAlignment="Left" VerticalAlignment="Top" Height="31" Width="164" Margin="10,10,0,0" FontSize="18"/>
+            <Label Content="In diesem Programm können Sie&#xD;&#xA;die Flächen, Volumina, Massen und &#xD;&#xA;Flächenträgheitsmomente ausgewählter &#xD;&#xA;Profile berechnen. &#xD;&#xA;&#xD;&#xA;Die Eingaben werden in [mm] und [kg]&#xD;&#xA;erwartet.&#xD;&#xA;&#xD;&#xA; " HorizontalAlignment="Left" Margin="10,41,0,0" VerticalAlignment="Top" Height="128" Width="241"/>
+        </Grid>
+
+
+
+
+    </Grid>
+</Window>

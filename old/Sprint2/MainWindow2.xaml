@@ -1,0 +1,47 @@
+﻿<Window x:Class="Sprint2.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Sprint2"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid Margin="0,0,-0.4,0">
+        <Button Content="Rechne" HorizontalAlignment="Left" Height="27" Margin="655,364,0,0" VerticalAlignment="Top" Width="110" Click="btn_Rechne_Click"/>
+        <Button Content="Ende" HorizontalAlignment="Left" Height="27" Margin="316,364,0,0" VerticalAlignment="Top" Width="140" Click="btn_Ende_Click"/>
+        <Image Name="img_Actual" HorizontalAlignment="Left" Height="175" Margin="435,84,0,0" VerticalAlignment="Top" Width="203" Source="Resources/img_IProfil.jpg"/>
+        
+        <Label Content="b:" HorizontalAlignment="Left" Height="27" Margin="169,39,0,0" VerticalAlignment="Top" Width="45"/>
+        <Label Content="h:" HorizontalAlignment="Left" Height="31" Margin="169,84,0,0" VerticalAlignment="Top" Width="64"/>
+        <Label Content="Länge:" HorizontalAlignment="Left" Height="31" Margin="169,140,0,0" VerticalAlignment="Top" Width="59"/>
+        <Label Content="Dichte:" HorizontalAlignment="Left" Height="28" Margin="169,195,0,0" VerticalAlignment="Top" Width="59"/>
+        
+        <TextBox Name="tb_b" HorizontalAlignment="Left" Height="27" Margin="233,39,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="149" TextChanged="funk_checkIfNumber_TextChanged" />
+        <TextBox HorizontalAlignment="Left" Height="31" Margin="233,84,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="149" TextChanged="tb_h"/>
+        <TextBox HorizontalAlignment="Left" Height="31" Margin="233,140,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="149"/>
+        <TextBox HorizontalAlignment="Left" Height="28" Margin="233,195,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="149"/>
+
+        <TreeView x:Name="tw_profilAuswahl" HorizontalAlignment="Left" Height="213" Margin="10,10,0,0" VerticalAlignment="Top" Width="134">
+            <TreeViewItem Name="it_Rechteckprofil" Header="Rechteckprofil" Selected="it_Rechteckprofil_Selected" />
+            <TreeViewItem Name="it_IProfil" Header="I-Profil" />
+            <TreeViewItem Name="it_TProfil" Header="T-Profil" />
+        </TreeView>
+
+
+
+
+                <Label Content="Rechteckprofil" HorizontalAlignment="Left" Height="40" Margin="435,35,0,0" VerticalAlignment="Top" Width="141"/>
+        <ListBox x:Name="profilarten" HorizontalAlignment="Left" Height="153" Margin="10,238,0,0" VerticalAlignment="Top" Width="134" IsSynchronizedWithCurrentItem="False">
+            <Button x:Name="Rechteckprofil" Height="14" Width="14"/>
+            <ListBoxItem Content="Rechteckprofil" Width="91" Selected="ListBoxItem_Selected"/>
+            <ListBoxItem Content="I-Profil" Width="54"/>
+            <ListBoxItem Content="T-Profil" Width="58"/>
+            <ListBoxItem Content="Keisprofil" Width="62" RenderTransformOrigin="0.521,4.755"/>
+            <ListBoxItem Content="Kreisringprofil" Width="84"/>
+        </ListBox>
+        
+        <Image x:Name="img" HorizontalAlignment="Left" Height="100" Margin="910,195,-217.6,0" VerticalAlignment="Top" Width="100"/>
+
+
+    </Grid>
+</Window>
