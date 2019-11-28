@@ -29,7 +29,7 @@ namespace Sprint2
         private void btn_Ende_Click(object sender, RoutedEventArgs e)
         {
             DialogResult result = System.Windows.Forms.MessageBox.Show(
-                "Wollen Sie das Programm beenden?",
+                "Wollen Sie das Programm wirklich beenden?",
                 "Programmende",
                  MessageBoxButtons.YesNo);
 
@@ -96,8 +96,10 @@ namespace Sprint2
             tb_Flaeche.Text = Convert.ToString(Math.Round(
                 b*h,
                 6));
+
             //VOLUMEN und MASSE
             rechne_VolumentUndMasse();
+
             //TRÄGHEIT
             double Iy, Iz;
             Iy = b * Math.Pow(h,3) / 12;
@@ -119,8 +121,10 @@ namespace Sprint2
             tb_Flaeche.Text = Convert.ToString(Math.Round(
                 B*H-h*(B-b),
                 6));
+
             //VOLUMEN und MASSE
             rechne_VolumentUndMasse();
+
             //TRÄGHEIT
             double Iy;
             Iy = (B * Math.Pow(H, 3) - (B-b)* Math.Pow(h, 3)) / 12;
@@ -182,7 +186,9 @@ namespace Sprint2
                 Math.PI*Math.Pow(d,2)/4,
                 6));
             //VOLUMEN und MASSE
+
             rechne_VolumentUndMasse();
+
             //TRÄGHEIT
             double I;
             I = (Math.PI*Math.Pow(d,4)) / 64;
@@ -201,8 +207,10 @@ namespace Sprint2
             tb_Flaeche.Text = Convert.ToString(Math.Round(
                 Math.PI * (Math.Pow(D, 2)- Math.Pow(d, 2)) / 4,
                 6));
+
             //VOLUMEN und MASSE
             rechne_VolumentUndMasse();
+
             //TRÄGHEIT
             double I;
             I = (Math.PI * (Math.Pow(D, 4)- Math.Pow(d, 4))) / 64;
@@ -224,9 +232,9 @@ namespace Sprint2
 
         private void testIfNumeric(object sender, TextChangedEventArgs e)
         {
-            //string[] tb_all = { tb_1.Text, tb_2.Text, tb_3.Text, tb_4.Text, tb_5.Text, tb_Dichte.Text, tb_Laenge.Text };
+            //string[] tb_all = { tb_1.Text, tb_2.Text, tb_3.Text, tb_4.Text, tb_Dichte.Text, tb_Laenge.Text };
 
-            //for (int i = 0; i < 7; i++) // es gibt 7 elemente in tb_all, welche getestet werden
+            //for (int i = 0; i < 6; i++) // es gibt 6 elemente in tb_all, welche getestet werden
             //{
             //    if (IsNumeric(tb_all[i]) || tb_all[i].Contains("-") || tb_all[i].Contains("."))
             //    {
@@ -234,7 +242,7 @@ namespace Sprint2
             //    }
             //    else
             //    {
-            //        tb_Volumen.Text = "nicht num";
+            //       tb_Volumen.Text = "nicht num";
             //    }
             //}
 
