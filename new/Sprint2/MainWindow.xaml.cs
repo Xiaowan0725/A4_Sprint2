@@ -129,7 +129,7 @@ namespace Sprint2
             }
             else if (H < h)
             {
-                MessageBoxResult msgAbfrage = MessageBox.Show("H muss größer als b sein!");
+                MessageBoxResult msgAbfrage = MessageBox.Show("H muss größer als h sein!");
                 return;
             }
 
@@ -164,7 +164,7 @@ namespace Sprint2
             }
             else if (H < h)
             {
-                MessageBoxResult msgAbfrage = MessageBox.Show("H muss größer als b sein!");
+                MessageBoxResult msgAbfrage = MessageBox.Show("H muss größer als h sein!");
                 return;
             }
 
@@ -280,7 +280,7 @@ namespace Sprint2
                 {
                     neu += c;
                 }
-                else if (c == '.' && !punktVorhanden)
+                else if (c == ',' && !punktVorhanden)
                 {
                     neu += c;
                     punktVorhanden = true;
